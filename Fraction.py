@@ -21,36 +21,38 @@ class Fraction():
             self.denominator = new_denominator
 
     def __str__(self):
-        return self.numerator + '/' + self.denominator
+        return str(self.numerator) + '/' + str(self.denominator)
 
     def add(self, other_fraction):
-        numerator_sum = str(int(self.numerator)*int(other_fraction.denominator) + int(other_fraction.numerator)*int(self.denominator))
-        denominator_sum = str(int(self.denominator)*int(other_fraction.denominator) + int(other_fraction.denominator)*int(self.denominator))
-        return numerator_sum + "/" + denominator_sum
+        self.numerator = self.numerator*other_fraction.denominator + other_fraction.numerator*self.denominator
+        self.denominator = self.denominator*other_fraction.denominator
+        # return numerator_sum + "/" + denominator_sum
 
     def subtract(self, other_fraction):
-        numerator_diff = str(int(self.numerator)*int(other_fraction.denominator) - int(other_fraction.numerator)*int(self.denominator))
-        denominator = str(int(self.denominator)*int(other_fraction.denominator))
-        return numerator_diff + "/" + denominator
+        self.numerator = (self.numerator*other_fraction.denominator - other_fraction.numerator*self.denominator)
+        self.denominator = (self.denominator*other_fraction.denominator)
+        # return numerator_diff + "/" + denominator
 
     def multiply(self, other_fraction):
-        numerator_product = str(int(self.numerator) * int(other_fraction.numerator))
-        denominator_product = str(int(self.denominator) * int(other_fraction.denominator))
-        return numerator_product + "/" + denominator_product
+        self.numerator = (self.numerator * other_fraction.numerator)
+        self.denominator = (self.denominator * other_fraction.denominator)
+        # return numerator_product + "/" + denominator_product
 
     # def __reduce__(self):
         # Fraction(numerator, denominator)
 
-def main():
-    fraction1 = Fraction("2", "3")
-    fraction2 = Fraction("3", "4")
-    # print(fraction1)
-    print(fraction1.add(fraction2))
-    print(fraction1.subtract(fraction2))
-    print(fraction1.multiply(fraction2))
 
+if __name__ == '__main__':
+    # put your code that utilizes your Fraction class here
+    fraction1 = Fraction(1, 2)
+    fraction2 = Fraction(1, 4)
 
-main()
-# if __name__ == '__main__':
-#     # put your code that utilizes your Fraction class here
-#     pass
+    print(fraction1, fraction2)
+    print(fraction1.numerator, fraction1.denominator)
+    print(fraction2.numerator, fraction2.denominator)
+    fraction1.add(fraction2)
+    print(fraction1)
+    # print(fraction1.get_denominator())
+    # print(fraction1.subtract(fraction2))
+    # print(fraction1.multiply(fraction2))
+    pass
