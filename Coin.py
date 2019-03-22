@@ -8,7 +8,7 @@ class Coin(object):
         self.face = random.choice(["heads", "tails"])
 
     def get_face(self):
-        return self.flip()
+        return self.face
 
     def flip(self):
         self.face = random.choice(["heads", "tails"])
