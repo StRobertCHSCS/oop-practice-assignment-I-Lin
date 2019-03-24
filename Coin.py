@@ -3,20 +3,35 @@ import random
 
 # Define your Coin class here
 class Coin(object):
+    """
+    A class representing a Coin
+    """
 
     def __init__(self):
+        """
+        Initialize the face of the coin
+        """
         self.face = random.choice(["heads", "tails"])
 
     def get_face(self):
+        """
+        Get the face of the coin
+        :return: the face of the coin
+        """
         return self.face
 
     def flip(self):
+        """
+        Flip the coin assigning either heads or tails
+        :return: None
+        """
         self.face = random.choice(["heads", "tails"])
 
 
-
 if __name__ == '__main__':
-    # put your code that utilizes your Coin class here
+    """
+    A program demonstrating the creation of Coin instance and calling class methods
+    """
     Coin1 = Coin()
     num_heads = 0
     num_tails = 0
@@ -30,4 +45,3 @@ if __name__ == '__main__':
     print("The number of head flips is", num_heads)
     print("The number of tail flips is", num_tails)
     pass
-#
